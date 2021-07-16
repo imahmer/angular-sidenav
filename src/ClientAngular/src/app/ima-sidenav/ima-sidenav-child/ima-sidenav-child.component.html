@@ -1,0 +1,7 @@
+<ul class="ima-sidenav-children">
+    <li *ngFor="let menu of data; let i = index" [ngClass]="{'ima-sidenav-hasChildren': menu.children.length > 0 && toggle[i]}">
+        <a class="ima-sidenav-anchor" href="javascript:void(0)" (click)="toggle[i] = !toggle[i]">{{menu.title}}</a>
+        <ima-sidenav-child [sharedData]="menu.children" *ngIf="menu.children.length > 0 && toggle[i]"></ima-sidenav-child>
+    </li>      
+</ul>
+
